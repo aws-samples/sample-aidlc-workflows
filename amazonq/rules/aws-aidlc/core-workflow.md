@@ -231,17 +231,54 @@ Let's begin!"
 
 ## User Stories (CONDITIONAL)
 
-**Execute IF**:
-- Multiple user personas or journeys
-- Feature affects user experience
-- Need for acceptance criteria
-- Team collaboration requires shared understanding
+**INTELLIGENT ASSESSMENT**: Use multi-factor analysis to determine if user stories add value:
 
-**Skip IF**:
-- Internal refactoring with no user impact
-- Bug fix with clear reproduction steps
-- Technical debt reduction
-- Infrastructure changes
+**ALWAYS Execute IF** (High Priority Indicators):
+- New user-facing features or functionality
+- Changes affecting user workflows or interactions
+- Multiple user types or personas involved
+- Complex business requirements with acceptance criteria needs
+- Cross-functional team collaboration required
+- Customer-facing API or service changes
+- New product capabilities or enhancements
+
+**LIKELY Execute IF** (Medium Priority - Assess Complexity):
+- Modifications to existing user-facing features
+- Backend changes that indirectly affect user experience
+- Integration work that impacts user workflows
+- Performance improvements with user-visible benefits
+- Security enhancements affecting user interactions
+- Data model changes affecting user data or reports
+
+**COMPLEXITY-BASED ASSESSMENT**: For medium priority cases, execute user stories if:
+- Request involves multiple components or services
+- Changes span multiple user touchpoints
+- Business logic is complex or has multiple scenarios
+- Requirements have ambiguity that stories could clarify
+- Implementation affects multiple user journeys
+- Change has significant business impact or risk
+
+**SKIP ONLY IF** (Low Priority - Simple Cases):
+- Pure internal refactoring with zero user impact
+- Simple bug fixes with clear, isolated scope
+- Infrastructure changes with no user-facing effects
+- Technical debt cleanup with no functional changes
+- Developer tooling or build process improvements
+- Documentation-only updates
+
+**ASSESSMENT CRITERIA**: When in doubt, favor inclusion of user stories for:
+- Requests with business stakeholder involvement
+- Changes requiring user acceptance testing
+- Features with multiple implementation approaches
+- Work that benefits from shared team understanding
+- Projects where requirements clarity is valuable
+
+**ASSESSMENT PROCESS**: 
+1. Analyze request complexity and scope
+2. Identify user impact (direct or indirect)
+3. Evaluate business context and stakeholder needs
+4. Consider team collaboration benefits
+5. Default to inclusion for borderline cases
 
 **Note**: If Requirements Analysis executed, Stories can reference and build upon those requirements.
 
@@ -252,13 +289,14 @@ Let's begin!"
 **Execution**:
 1. **MANDATORY**: Log any user input during this phase in audit.md
 2. Load all steps from `inception/user-stories.md`
-3. Load reverse engineering artifacts (if brownfield)
-4. If Requirements exist, reference them when creating stories
-5. Execute at appropriate depth (minimal/standard/comprehensive)
-6. **PART 1 - Planning**: Create story plan with questions, wait for user answers, analyze for ambiguities, get approval
-7. **PART 2 - Generation**: Execute approved plan to generate stories and personas
-8. **Wait for Explicit Approval**: Follow approval format from user-stories.md detailed steps - DO NOT PROCEED until user confirms
-9. **MANDATORY**: Log user's response in audit.md with complete raw input
+3. **MANDATORY**: Perform intelligent assessment (Step 1 in user-stories.md) to validate user stories are needed
+4. Load reverse engineering artifacts (if brownfield)
+5. If Requirements exist, reference them when creating stories
+6. Execute at appropriate depth (minimal/standard/comprehensive)
+7. **PART 1 - Planning**: Create story plan with questions, wait for user answers, analyze for ambiguities, get approval
+8. **PART 2 - Generation**: Execute approved plan to generate stories and personas
+9. **Wait for Explicit Approval**: Follow approval format from user-stories.md detailed steps - DO NOT PROCEED until user confirms
+10. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ## Workflow Planning (ALWAYS EXECUTE)
 
@@ -360,8 +398,9 @@ Let's begin!"
 1. **MANDATORY**: Log any user input during this stage in audit.md
 2. Load all steps from `construction/functional-design.md`
 3. Execute functional design for this unit
-4. **Wait for Explicit Approval**: Ask: "**Functional design complete for [unit-name]. Ready to proceed to next stage?**" - DO NOT PROCEED until user confirms
-5. **MANDATORY**: Log user's response in audit.md with complete raw input
+4. **MANDATORY**: Present standardized 2-option completion message as defined in functional-design.md - DO NOT use emergent 3-option behavior
+5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
+6. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ### NFR Requirements (CONDITIONAL, per-unit)
 
@@ -377,10 +416,11 @@ Let's begin!"
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this stage in audit.md
-2. Load all steps from `construction/nfr-requirements-assessment.md`
+2. Load all steps from `construction/nfr-requirements.md`
 3. Execute NFR assessment for this unit
-4. **Wait for Explicit Approval**: Ask: "**NFR requirements assessment complete for [unit-name]. Ready to proceed to next stage?**" - DO NOT PROCEED until user confirms
-5. **MANDATORY**: Log user's response in audit.md with complete raw input
+4. **MANDATORY**: Present standardized 2-option completion message as defined in nfr-requirements.md - DO NOT use emergent behavior
+5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
+6. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ### NFR Design (CONDITIONAL, per-unit)
 
@@ -396,8 +436,9 @@ Let's begin!"
 1. **MANDATORY**: Log any user input during this stage in audit.md
 2. Load all steps from `construction/nfr-design.md`
 3. Execute NFR design for this unit
-4. **Wait for Explicit Approval**: Ask: "**NFR design complete for [unit-name]. Ready to proceed to next stage?**" - DO NOT PROCEED until user confirms
-5. **MANDATORY**: Log user's response in audit.md with complete raw input
+4. **MANDATORY**: Present standardized 2-option completion message as defined in nfr-design.md - DO NOT use emergent behavior
+5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
+6. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ### Infrastructure Design (CONDITIONAL, per-unit)
 
@@ -414,8 +455,9 @@ Let's begin!"
 1. **MANDATORY**: Log any user input during this stage in audit.md
 2. Load all steps from `construction/infrastructure-design.md`
 3. Execute infrastructure design for this unit
-4. **Wait for Explicit Approval**: Ask: "**Infrastructure design complete for [unit-name]. Ready to proceed to Code Generation?**" - DO NOT PROCEED until user confirms
-5. **MANDATORY**: Log user's response in audit.md with complete raw input
+4. **MANDATORY**: Present standardized 2-option completion message as defined in infrastructure-design.md - DO NOT use emergent behavior
+5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
+6. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ### Code Generation (ALWAYS EXECUTE, per-unit)
 
@@ -430,8 +472,9 @@ Let's begin!"
 2. Load all steps from `construction/code-generation.md`
 3. **PART 1 - Planning**: Create code generation plan with checkboxes, get user approval
 4. **PART 2 - Generation**: Execute approved plan to generate code for this unit
-5. **Wait for Explicit Approval**: Ask: "**Code generation complete for [unit-name]. Ready to proceed to [next unit/Build & Test]?**" - DO NOT PROCEED until user confirms
-6. **MANDATORY**: Log user's response in audit.md with complete raw input
+5. **MANDATORY**: Present standardized 2-option completion message as defined in code-generation.md - DO NOT use emergent behavior
+6. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
+7. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ---
 
@@ -487,6 +530,7 @@ The Operations stage will eventually include:
   - **CRITICAL**: Log every interaction, not just approvals
 - **Quality Focus**: Complex changes get full treatment, simple changes stay efficient
 - **Content Validation**: Always validate content before file creation per content-validation.md rules
+- **NO EMERGENT BEHAVIOR**: Construction phases MUST use standardized 2-option completion messages as defined in their respective rule files. DO NOT create 3-option menus or other emergent navigation patterns.
 
 ## MANDATORY: Plan-Level Checkbox Enforcement
 

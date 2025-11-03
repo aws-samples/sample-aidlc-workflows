@@ -76,22 +76,32 @@ Analyze whatever the user has provided:
    - Pasted content or file references
    - Convert any non-markdown documents to markdown format 
 
-### Step 5: Intuitive Completeness Check
+### Step 5: Thorough Completeness Analysis
 
-Use Amazon Q intelligence to evaluate if requirements are sufficient:
-   - **If sufficient**: "Requirements look comprehensive, ready to proceed to stories"
-   - **If insufficient**: Identify specific gaps and generate targeted questions
+**CRITICAL**: Use comprehensive analysis to evaluate requirements completeness. Default to asking questions when there is ANY ambiguity or missing detail.
 
-### Step 6: Ask Clarifying Questions (only if needed)
-   - Create `aidlc-docs/inception/requirements/requirement-verification-questions.md` with questions about missing or unclear areas using [Answer]: tag format
-   - Focus on functional requirements, non-functional requirements, and user scenarios
+**MANDATORY**: Evaluate ALL of these areas and ask questions for ANY that are unclear:
+- **Functional Requirements**: Core features, user interactions, system behaviors
+- **Non-Functional Requirements**: Performance, security, scalability, usability
+- **User Scenarios**: Use cases, user journeys, edge cases, error scenarios
+- **Business Context**: Goals, constraints, success criteria, stakeholder needs
+- **Technical Context**: Integration points, data requirements, system boundaries
+- **Quality Attributes**: Reliability, maintainability, testability, accessibility
+
+**When in doubt, ask questions** - incomplete requirements lead to poor implementations.
+
+### Step 6: Generate Clarifying Questions (PROACTIVE APPROACH)
+   - **ALWAYS** create `aidlc-docs/inception/requirements/requirement-verification-questions.md` unless requirements are exceptionally clear and complete
+   - Ask questions about ANY missing, unclear, or ambiguous areas
+   - Focus on functional requirements, non-functional requirements, user scenarios, and business context
    - Request user to fill in all [Answer]: tags directly in the questions document
    - If presenting multiple-choice options for answers:
      - Label the options as A, B, C, D etc.
      - Ensure options are mutually exclusive and don't overlap
-     - ALWAYS include option for custom response: "E) Other (please describe after [Answer]: tag below)"
+     - ALWAYS include option for custom response: "X) Other (please describe after [Answer]: tag below)"
    - Wait for user answers in the document
-   - **Mandatory** keep asking questions either until you are happy with the requirements or until the user asks you to proceed to next phase explicitly.
+   - **MANDATORY**: Analyze ALL answers for ambiguities and create follow-up questions if needed
+   - **MANDATORY**: Keep asking questions until ALL ambiguities are resolved OR user explicitly asks to proceed
 
 ### Step 7: Generate Requirements Document
    - Create `aidlc-docs/inception/requirements/requirements.md`

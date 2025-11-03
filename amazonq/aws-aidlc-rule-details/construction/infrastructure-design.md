@@ -50,7 +50,45 @@ Map logical software components to actual infrastructure choices for deployment 
 - Create `aidlc-docs/construction/{unit-name}/infrastructure-design/deployment-architecture.md`
 - If shared infrastructure: Create `aidlc-docs/construction/shared-infrastructure.md`
 
-### Step 7: Log Approval and Update Progress
+### Step 7: Present Completion Message
+- Present completion message in this structure:
+     1. **Completion Announcement** (mandatory): Always start with this:
+
+```markdown
+# 🏢 Infrastructure Design Complete - [unit-name]
+```
+
+     2. **AI Summary** (optional): Provide structured bullet-point summary of infrastructure design
+        - Format: "Infrastructure design has mapped [description]:"
+        - List key infrastructure services and components (bullet points)
+        - List deployment architecture decisions and rationale
+        - Mention cloud provider choices and service mappings
+        - DO NOT include workflow instructions ("please review", "let me know", "proceed to next phase", "before we proceed")
+        - Keep factual and content-focused
+     3. **Formatted Workflow Message** (mandatory): Always end with this exact format:
+
+```markdown
+> **📋 <u>**REVIEW REQUIRED:**</u>**  
+> Please examine the infrastructure design at: `aidlc-docs/construction/[unit-name]/infrastructure-design/`
+
+
+
+> **🚀 <u>**WHAT'S NEXT?**</u>**
+>
+> **You may:**
+>
+> 🔧 **Request Changes** - Ask for modifications to the infrastructure design based on your review  
+> ✅ **Continue to Next Stage** - Approve infrastructure design and proceed to **Code Generation**
+
+---
+```
+
+### Step 8: Wait for Explicit Approval
+- Do not proceed until the user explicitly approves the infrastructure design
+- Approval must be clear and unambiguous
+- If user requests changes, update the design and repeat the approval process
+
+### Step 9: Record Approval and Update Progress
 - Log approval in audit.md with timestamp
-- Wait for explicit user approval
+- Record the user's approval response with timestamp
 - Mark Infrastructure Design stage complete in aidlc-state.md

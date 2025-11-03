@@ -102,10 +102,52 @@ This stage generates code for each unit of work through two integrated parts:
 - [ ] Update `aidlc-docs/aidlc-state.md` current status
 - [ ] Save all generated artifacts
 
-## Step 13: Continue or Complete
+## Step 13: Continue or Complete Generation
 - [ ] If more steps remain, return to Step 10
-- [ ] If all steps complete, mark Code Generation stage as complete for this unit
-- [ ] Provide final summary of unit generation
+- [ ] If all steps complete, proceed to present completion message
+
+## Step 14: Present Completion Message
+- Present completion message in this structure:
+     1. **Completion Announcement** (mandatory): Always start with this:
+
+```markdown
+# 💻 Code Generation Complete - [unit-name]
+```
+
+     2. **AI Summary** (optional): Provide structured bullet-point summary of code generation
+        - Format: "Code generation has created [description]:"
+        - List key code artifacts generated (bullet points)
+        - List test coverage and documentation created
+        - Mention deployment artifacts and configuration files
+        - DO NOT include workflow instructions ("please review", "let me know", "proceed to next phase", "before we proceed")
+        - Keep factual and content-focused
+     3. **Formatted Workflow Message** (mandatory): Always end with this exact format:
+
+```markdown
+> **📋 <u>**REVIEW REQUIRED:**</u>**  
+> Please examine the generated code at: `aidlc-docs/construction/[unit-name]/code/`
+
+
+
+> **🚀 <u>**WHAT'S NEXT?**</u>**
+>
+> **You may:**
+>
+> 🔧 **Request Changes** - Ask for modifications to the generated code based on your review  
+> ✅ **Continue to Next Stage** - Approve code generation and proceed to **[next-unit/Build & Test]**
+
+---
+```
+
+## Step 15: Wait for Explicit Approval
+- Do not proceed until the user explicitly approves the generated code
+- Approval must be clear and unambiguous
+- If user requests changes, update the code and repeat the approval process
+
+## Step 16: Record Approval and Update Progress
+- Log approval in audit.md with timestamp
+- Record the user's approval response with timestamp
+- Mark Code Generation stage as complete for this unit in aidlc-state.md
 
 ---
 

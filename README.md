@@ -20,15 +20,20 @@ To confirm that the Amazon Q Rules are correctly loaded in your IDE, follow thes
 
 2. Verify that you see an entry for `.amazonq/rules/aws-aidlc` in the displayed list of rules.
 
-If you do not see the `aws-aidlc` rules loaded, please check the directory where you previously issued the `cp` command. Ensure that the rules file was successfully copied to the correct location.
+If you do not see the `aws-aidlc` rules loaded, please check the directory where you previously issued the `cp` command. Ensure that the rules file was successfully copied to the correct location. The `.amazonq` directory must sit directly below the project root.
+
+![](./q_rules.png?raw=true "AI-DLC Rules in Q Developer")
+
+
+
 
 ### Usage
-1. Start any software development project by stating your intent in the chat (Amazon Q IDE Extension or in Q CLI). AI-DLC automatically activates and guide you from there.
+1. Start any software development project by stating your intent in the chat (Amazon Q IDE Extension or in Q CLI). AI-DLC automatically activates and guides you from there.
 2. Answer structured questions that AI-DLC asks you
 3. Carefully review every plan that AI generates. Provide your oversight and validation.
-3. Review the execution plan to see which stages will run
-4. Creafullt review rhe artefacts and Approve each stage to maintain control
-5. All the artifacts will be generated in the `aidlc-docs/` directory
+4. Review the execution plan to see which stages will run
+5. Carefully review the artifacts and approve each stage to maintain control
+6. All the artifacts will be generated in the `aidlc-docs/` directory
 
 ## Three-Phase Adaptive Workflow
 
