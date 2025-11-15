@@ -1,6 +1,16 @@
+
+# This code base has moved to a new location - https://github.com/awslabs/aidlc-workflows
+# Please refer to the new location.   
+
+---
+
+# *** ARCHIVED ***
+
 # AI-DLC (AI-Driven Development Life Cycle)
 
-An intelligent software development workflow that adapts to your needs, maintains quality standards, and keeps you in control of the process. For learning more about AI-DLC Methodology, read this [official blog](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/) and the [Method Definition Paper](https://prod.d13rzhkk8cj2z0.amplifyapp.com/) referred in it. 
+Intelligent software development that adapts to your work, not the other way around.
+
+AI-DLC is an intelligent software development workflow that adapts to your needs, maintains quality standards, and keeps you in control of the process. For learning more about AI-DLC Methodology, read this [blog](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/) and the [Method Definition Paper](https://prod.d13rzhkk8cj2z0.amplifyapp.com/) referred in it. 
 
 ## Quick Start
 
@@ -23,9 +33,6 @@ To confirm that the Amazon Q Rules are correctly loaded in your IDE, follow thes
 If you do not see the `aws-aidlc` rules loaded, please check the directory where you previously issued the `cp` command. Ensure that the rules file was successfully copied to the correct location. The `.amazonq` directory must sit directly below the project root.
 
 ![](./q_rules.png?raw=true "AI-DLC Rules in Q Developer")
-
-
-
 
 ### Usage
 1. Start any software development project by stating your intent in the chat (Amazon Q IDE Extension or in Q CLI). AI-DLC automatically activates and guides you from there.
@@ -69,6 +76,10 @@ AI-DLC follows a structured three-phase approach that adapts to your project's c
 - Amazon Q Developer IDE plugin, Q CLI
 - Supported platforms: Amazon Q Developer IDE, Q CLI (Kiro support coming soon)
 
----
+## Security
 
-**AI-DLC**: Intelligent software development that adapts to your work, not the other way around.
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.
